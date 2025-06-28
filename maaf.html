@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Maaf ya Sayang 😔</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffd6e0, #fcb1c3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      animation: fadeIn 1s ease-out;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-bottom: 20px;
+      animation: popUp 0.8s ease-out;
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .ya-btn {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .ya-btn:hover {
+      background-color: #d81b60;
+      transform: scale(1.05);
+    }
+
+    .container {
+      position: relative;
+      height: 120px;
+      margin-top: 30px;
+    }
+
+    #btn {
+      position: absolute;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #btn:hover {
+      background-color: #e53935;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Maaf ya, Cintaku 💔</h1>
+    <p>
+      Aku sadar aku salah dan sudah bikin kamu kecewa.<br>
+      Tapi aku bener-bener sayang sama kamu...<br>
+      Kasih aku satu kesempatan lagi ya? 😢
+    </p>
+
+    <!-- Tombol Maafin Aku -->
+    <a href="https://wa.me/6283891858519?text=Iyaa%20sayangku%20%E2%9D%A4%EF%B8%8F" target="_blank">
+      <button class="ya-btn">Iyaa aku maafin ❤️</button>
+    </a>
+
+    <!-- Tombol Gamauuuu yang kabur -->
+    <div class="container">
+      <button id="btn">Gamauuuu 😠</button>
+    </div>
+  </div>
+
+  <script>
+    const button = document.getElementById("btn");
+
+    function moveButton() {
+      const container = document.querySelector(".container");
+      const maxX = container.clientWidth - button.clientWidth;
+      const maxY = container.clientHeight - button.clientHeight;
+
+      const newX = Math.floor(Math.random() * maxX);
+      const newY = Math.floor(Math.random() * maxY);
+
+      button.style.left = `${newX}px`;
+      button.style.top = `${newY}px`;
+    }
+
+    button.addEventListener("mouseenter", moveButton);
+    button.addEventListener("click", moveButton); // kalau nekat klik, tetap kabur 😆
+  </script>
+</body>
+</html>
